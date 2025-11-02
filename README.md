@@ -3,7 +3,7 @@
 
 ## :black_nib: TODO List<a name="todo"></a>
 
-- [x]  Release [PreferThinker paper]().
+- [ ]  Release [PreferThinker paper]().
 - [ ]  Release inference code and checkpoints
 - [ ]  Release CoT-based personlized preference assessment dataset
 - [ ]  Release train code 
