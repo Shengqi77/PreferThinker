@@ -1,1 +1,1 @@
-# PreferThinker
+### The official implementation of **PreferThinker**.
