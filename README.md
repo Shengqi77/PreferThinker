@@ -1,5 +1,7 @@
-### The official implementation of **PreferThinker**.
-<br/>
+<div align="center">
+
+# [2026 ICLR🔥] PreferThinker: Reasoning-based Personalized Image Preference Assessment
+</div>
 
 ## :black_nib: TODO List<a name="todo"></a>
 
