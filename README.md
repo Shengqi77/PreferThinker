@@ -9,7 +9,7 @@
 
 ## :black_nib: TODO List<a name="todo"></a>
 
-- [ ] Release [PreferThinker paper](https://arxiv.org/pdf/2511.00609).
+- [x] Release [PreferThinker paper](https://arxiv.org/pdf/2511.00609).
 - [ ] Release inference code and checkpoints.
 - [x] Release PreferThinker-Bench
 - [ ] Release CoT-based personlized preference assessment dataset
@@ -17,7 +17,7 @@
 
 <br/>
 
-## :datasets: Dataset Release
+## 🧪 Dataset Release
 
 We have released the **PreferThinker-Bench** on Hugging Face. This benchmark is designed for evaluating reasoning-based personalized image preference assessment.
 
