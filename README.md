@@ -17,7 +17,7 @@
 
 <br/>
 
-## 🧪 Dataset Release
+## 🧪 Released Test Sets
 
 We have released the **PreferThinker-Bench** on Hugging Face. This benchmark is designed for evaluating reasoning-based personalized image preference assessment.
 
