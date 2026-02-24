@@ -19,7 +19,7 @@
 
 ## 🧪 Released Test Sets
 
-We have released the **PreferThinker-Bench** on Hugging Face. This benchmark is designed for evaluating reasoning-based personalized image preference assessment.
+We have released the **PreferImg-Bench** on Hugging Face. This benchmark is designed for evaluating personalized image preference assessment.
 
 | Subset | Samples | Description |
 | :--- | :--- | :--- |
@@ -29,4 +29,4 @@ We have released the **PreferThinker-Bench** on Hugging Face. This benchmark is 
 | **TEST_SP_OD** | 500 | Single-preference Out-of-Domain test set |
 | **TEST_PICKAPIC** | 894 | Evaluation on Pick-a-Pic distribution |
 
-**Access the dataset here:** 👉 [ZhouSimple/PreferThinker-Bench](https://huggingface.co/datasets/ZhouSimple/PreferThinker-Bench)
+**Access the dataset here:** 👉 [ZhouSimple/PreferImg-Bench](https://huggingface.co/datasets/ZhouSimple/PreferImg-Bench)
