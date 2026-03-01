@@ -49,8 +49,7 @@ cd PreferThinker
 conda create -n preferthinker python=3.10
 conda activate preferthinker
 
-pip install torch torchvision --index-url [https://download.pytorch.org/whl/cu118](https://download.pytorch.org/whl/cu118)
-pip install transformers qwen-vl-utils tqdm pillow
+pip install -r requirements.txt
 
 ```
 
