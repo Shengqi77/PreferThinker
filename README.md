@@ -55,14 +55,14 @@ pip install -r requirements.txt
 
 ## 🚀 Evaluation
 
-You can use the provided `eval_qwen.py` script to evaluate the Qwen-VL based model on our PreferImg-Bench. The script supports distributed evaluation using `torchrun`.
+You can use the provided `eval_PreferThinker.py` script to evaluate the model on our PreferImg-Bench. The script supports distributed evaluation using `torchrun`.
 
 ### Running the Evaluation
 
 To evaluate the model on a specific test set (e.g., `PICKAPIC.json`), run the following command. Make sure to adjust `--nproc_per_node` according to the number of GPUs you have available:
 
 ```bash
-torchrun --nproc_per_node=8 eval_qwen.py \
+torchrun --nproc_per_node=8 eval_PreferThinker.py \
     --model_path "/path/to/your/PreferThinker/checkpoint" \
     --data_path "/path/to/PreferImg-Bench/data/PICKAPIC/PICKAPIC.json" \
     --image_root "/path/to/PreferImg-Bench/data/PICKAPIC/images" \
