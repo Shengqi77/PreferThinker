@@ -13,7 +13,7 @@
 - [x] Release evaluation code.
 - [x] Release PreferThinker-Bench.
 - [ ] Release inference checkpoints.
-- [ ] Release CoT-based personalized preference assessment dataset.
+- [x] Release CoT-based personalized preference assessment dataset.
 - [ ] Release training code.
 
 <br/>
