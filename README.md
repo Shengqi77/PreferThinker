@@ -92,6 +92,6 @@ We are incrementally releasing the training corpus for **PreferThinker**, specif
 * **Hugging Face:** [🤗 ZhouSimple/PreferThinker-Dataset](https://huggingface.co/datasets/ZhouSimple/PreferThinker-Dataset)
 
 
-> Status: 🏗️ Under preparation. The dataset will be made available upon the completion of internal review.
+> The remaining data will be released sequentially.
 
 <br/>
