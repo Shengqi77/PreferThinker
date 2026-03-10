@@ -81,3 +81,17 @@ torchrun --nproc_per_node=8 eval_PreferThinker.py \
 * `--batch_size`: Batch size per GPU (default: 8).
 
 Once the evaluation is complete, the script will automatically calculate the accuracy and save the detailed predictions (including predicted preference profiles and rationales) to the specified `--output_dir`.
+
+## 📂 Data Release
+
+We are incrementally releasing the training corpus for **PreferThinker**, specifically designed for **CoT-based personalized preference assessment**.
+
+### 📊 Current Status
+* **Subset:** 10K image-text pairs (Single-preference focus).
+* **Methodology:** CoT-enhanced preference assessment data.
+* **Hugging Face:** [🤗 ZhouSimple/PreferThinker-Dataset](https://huggingface.co/datasets/ZhouSimple/PreferThinker-Dataset)
+
+
+> Stay tuned for further updates as we expand the dataset to include multi-dimensional preference data.
+
+<br/>
