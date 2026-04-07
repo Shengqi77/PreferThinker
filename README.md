@@ -46,10 +46,10 @@ cd PreferThinker
 2. Create a conda environment and install the dependencies:
 
 ```bash
-conda create -n preferthinker python=3.10
+conda create -n preferthinker python=3.11
 conda activate preferthinker
 
-pip install -r requirements.txt
+bash setup.sh
 
 ```
 
