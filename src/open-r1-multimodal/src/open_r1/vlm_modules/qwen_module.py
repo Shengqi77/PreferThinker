@@ -70,7 +70,7 @@ class Qwen2VLModule(VLMBaseModule):
                 return "{Question} First output the thinking process in <think> </think> tags and then output the final answer in <answer> </answer> tags. Output the final answer in JSON format."
             case "ic":
                 return "{Question} First thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., <think> reasoning process here </think><answer> json format answer here </answer>"
-            case "prefer_eval": # NOTE 针对偏好评估设计-05-16-XSQ
+            case "prefer_eval":
                 return "{Question} First thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning process and answer are enclosed within <think> </think> and <answer> </answer> tags."
             case "odLength":
                 SYSTEM_PROMPT = (
@@ -129,9 +129,6 @@ class Qwen2VLModule(VLMBaseModule):
         for content, sol in zip(contents, solution):
             print(f"sol 类型: {type(sol)}, 内容: {sol}")
             print(f"content 类型: {type(content)}, 内容: {content}")
-            # sol = re.findall(answer_tag_pattern, sol, re.DOTALL)[-1] #NOTE 有bug
-            # sol = re.findall(bbox_pattern, sol, re.DOTALL)[-1] #NOTE 有bug
-            # sol = json.loads(sol.strip())
             reward = 0.0
             # Try symbolic verification first
             try:
