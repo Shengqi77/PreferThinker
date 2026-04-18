@@ -14,7 +14,7 @@
 - [x] Release PreferThinker-Bench.
 - [ ] Release inference checkpoints.
 - [x] Release CoT-based personalized preference assessment dataset.
-- [ ] Release training code.
+- [x] Release training code.
 
 <br/>
 
@@ -158,9 +158,3 @@ In particular:
 * Image file names are joined with `--image_folders` to form absolute image paths.
 * For historical preferred / non-preferred images, the current implementation uses up to the first 5 images in each list.
 
-### Notes
-
-* The released script currently focuses on **single-preference GRPO training**.
-* `flux_server_dir` will be recreated during training, so please do not point it to a directory containing files you need to keep.
-* The default example uses `Qwen2.5-VL-7B-Instruct`, `bf16`, gradient checkpointing, and DeepSpeed ZeRO-3.
-* If you use multiple datasets, make sure the numbers of entries in `data_file_paths`, `image_folders`, and reward-method settings are exactly matched.
