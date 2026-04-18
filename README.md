@@ -95,3 +95,72 @@ We are incrementally releasing the training corpus for **PreferThinker**, specif
 > The remaining data will be released sequentially.
 
 <br/>
+
+## 🏋️ Training
+
+We also provide the training pipeline for **PreferThinker** in [src/open-r1-multimodal/src/open_r1](./src/open-r1-multimodal/src/open_r1). The current released script targets **single-preference training** with **GRPO**.
+
+### Training Entry
+
+The main training files are:
+
+* `src/open-r1-multimodal/src/open_r1/preferthinker_singlepref_grpo_run.sh`
+* `src/open-r1-multimodal/src/open_r1/preferthinker_singlepref_grpo.py`
+
+Before launching training, please edit the paths in `preferthinker_singlepref_grpo_run.sh`:
+
+```bash
+DATA_PATHS="/path/to/your/dataset.jsonl"
+IMAGE_FOLDERS="/path/to/your/images"
+
+MODEL_PATH="/path/to/your/model/Qwen2.5-VL-7B-Instruct"
+SBERT_MODEL_PATH="/path/to/your/model/all-MiniLM-L6-v2"
+DREAMSIM_CACHE_DIR="/path/to/your/dreamsim_cache"
+DEEPSPEED_CONFIG="/path/to/your/deepspeed_config/zero3.json"
+```
+
+Then launch training with:
+
+```bash
+cd src/open-r1-multimodal/src/open_r1
+bash preferthinker_singlepref_grpo_run.sh
+```
+
+### What the Training Script Does
+
+The released training pipeline uses `torchrun` + `DeepSpeed` to optimize a multimodal preference reasoning model with GRPO. In the default script:
+
+* `preferthinker_singlepref_grpo.py` loads one or more JSONL training files from `--data_file_paths`.
+* `--image_folders` should align with `--data_file_paths` one-by-one, separated by `:`.
+* The script builds multimodal prompts from the user's historical preferred images, non-preferred images, and the candidate pair (`Image A` / `Image B`).
+* The default reward combination is:
+  * `accuracy`
+  * `prefer_attributes`
+  * `non-prefer_attributes`
+  * `format`
+* Auxiliary evaluators include **SBERT** and **DreamSim**, so their local paths should be prepared in advance.
+
+### Expected Data Format
+
+Each line of the training file should be a JSON object. The current code expects fields consistent with the released pipeline, including:
+
+* `conversations`
+* `imageA`, `imageB`
+* `prefered_images`, `non_prefered_images`
+* `prefer_attributes`, `non_prefer_attributes`
+* `user_id`
+* `reference_prompt_list`
+
+In particular:
+
+* `conversations[0]["value"]` is used as the input question.
+* `conversations[1]["value"]` is used to extract the target answer.
+* Image file names are joined with `--image_folders` to form absolute image paths.
+* For historical preferred / non-preferred images, the current implementation uses up to the first 5 images in each list.
+
+### Notes
+
+* The released script currently focuses on **single-preference GRPO training**.
+* `flux_server_dir` will be recreated during training, so please do not point it to a directory containing files you need to keep.
+* The default example uses `Qwen2.5-VL-7B-Instruct`, `bf16`, gradient checkpointing, and DeepSpeed ZeRO-3.
+* If you use multiple datasets, make sure the numbers of entries in `data_file_paths`, `image_folders`, and reward-method settings are exactly matched.
