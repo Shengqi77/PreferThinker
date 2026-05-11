@@ -156,5 +156,15 @@ In particular:
 * `conversations[0]["value"]` is used as the input question.
 * `conversations[1]["value"]` is used to extract the target answer.
 * Image file names are joined with `--image_folders` to form absolute image paths.
+
+## 📘 Citation
+If you find our work helpful for your own research or work, please cite our paper.
+```
+@article{xu2025preferthinker,
+  title={PreferThinker: Reasoning-based Personalized Image Preference Assessment},
+  author={Xu, Shengqi and Zhou, Xinpeng and Zhang, Yabo and Liu, Ming and Liang, Tao and Zhang, Tianyu and Bai, Yalong and Wu, Zuxuan and Zuo, Wangmeng},
+  journal={arXiv preprint arXiv:2511.00609},
+  year={2025}
+}
 * For historical preferred / non-preferred images, the current implementation uses up to the first 5 images in each list.
 
