@@ -3,6 +3,7 @@
 # [ICLR 2026 🔥] PreferThinker: Reasoning-based Personalized Image Preference Assessment
 
 [![Hugging Face Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-blue)](https://huggingface.co/datasets/ZhouSimple/PreferImg-Bench)
+[![Hugging Face Model](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-blue)](https://huggingface.co/ZhouSimple/PreferThinker_model)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 </div>
@@ -12,7 +13,7 @@
 - [x] Release [PreferThinker paper](https://arxiv.org/pdf/2511.00609).
 - [x] Release evaluation code.
 - [x] Release PreferThinker-Bench.
-- [ ] Release inference checkpoints.
+- [x] Release inference checkpoints.
 - [x] Release CoT-based personalized preference assessment dataset.
 - [x] Release training code.
 
@@ -31,6 +32,20 @@ We have released the **PreferImg-Bench** on Hugging Face. This benchmark is desi
 | **TEST_PICKAPIC** | 894 | Evaluation on Pick-a-Pic distribution |
 
 **Access the dataset here:** 👉 [ZhouSimple/PreferImg-Bench](https://huggingface.co/datasets/ZhouSimple/PreferImg-Bench)
+
+<br/>
+
+## Model Release
+
+We have released the **PreferThinker** inference checkpoint on Hugging Face:
+
+**Access the model here:** [ZhouSimple/PreferThinker_model](https://huggingface.co/ZhouSimple/PreferThinker_model)
+
+You can also download or load the checkpoint with the Hugging Face model id:
+
+```bash
+ZhouSimple/PreferThinker_model
+```
 
 <br/>
 
@@ -63,7 +78,7 @@ To evaluate the model on a specific test set (e.g., `PICKAPIC.json`), run the fo
 
 ```bash
 torchrun --nproc_per_node=8 eval_PreferThinker.py \
-    --model_path "/path/to/your/PreferThinker/checkpoint" \
+    --model_path "ZhouSimple/PreferThinker_model" \
     --data_path "/path/to/PreferImg-Bench/data/PICKAPIC/PICKAPIC.json" \
     --image_root "/path/to/PreferImg-Bench/data/PICKAPIC/images" \
     --output_dir "./logs" \
